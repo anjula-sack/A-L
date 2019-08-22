@@ -3,7 +3,21 @@ $account_no = $_POST['acc_no'];
 $amount = $_POST['amount'];
 $method = $_POST['method'];
 
-echo $account_no, $amount, $method
 
+$conn = new mysqli('localhost', 'root', 'root123', 'payment');
+
+if ($conn->connect_error) {
+    die("Connection Error");
+}
+
+$result = $conn->query("INSERT INTO pay(    account_number,payment_method,amount) VALUES ('$account_no','$method','$amount')");
+
+if ($result === true) {
+    echo "Record Added";
+} else {
+    echo "error:" . "</br>" . $conn->error;
+}
+
+$conn->close();
 
 ?>
