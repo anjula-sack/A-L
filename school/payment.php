@@ -8,6 +8,10 @@ if ($conn->connect_error) {
 
 $result = $conn->query("SELECT * FROM pay WHERE account_number='$account'");
 
+
+$row = $result->fetch_assoc()
+
+
 ?>
 
 <!DOCTYPE html>
@@ -17,31 +21,21 @@ $result = $conn->query("SELECT * FROM pay WHERE account_number='$account'");
     <title>Payment Search</title>
 </head>
 <body>
-<?php
-while ($row = $result->fetch_assoc()){
-
-
-?>
 
 
 <h1>Your Payment History 2019</h1>
-<table>
+<table border="1">
     <tr>
         <td>Account Number</td>
         <td>Payment Method</td>
         <td>Amount</td>
     </tr>
     <tr>
-        <td><?php echo $row[' account_number']; ?></td>
-        <td><?php echo $row[' payment_method']; ?></td>
-        <td><?php echo $row[' amount']; ?></td>
+        <td><?php echo $row['account_number']; ?></td>
+        <td><?php echo $row['payment_method']; ?></td>
+        <td><?php echo $row['amount']; ?></td>
     </tr>
-    <?php
 
-
-    }
-
-    ?>
 </table>
 </body>
 </html>
