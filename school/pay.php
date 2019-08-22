@@ -22,3 +22,14 @@ $conn->close();
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Check Your Payment History</h1>
+<a href="payment_search.html">Click here</a>
+</body>
+</html>
