@@ -10,10 +10,10 @@ if ($conn->connect_error) {
     die("Connection Error");
 }
 
-$result = $conn->query("INSERT INTO pay(    account_number,payment_method,amount) VALUES ('$account_no','$method','$amount')");
+$result = $conn->query("INSERT INTO pay(account_number,payment_method,amount) VALUES ('$account_no','$method','$amount')");
 
 if ($result === true) {
-    echo "Record Added";
+    echo "Payment Success";
 } else {
     echo "error:" . "</br>" . $conn->error;
 }
@@ -21,3 +21,10 @@ if ($result === true) {
 $conn->close();
 
 ?>
+
+<html>
+<head></head>
+<body>
+<h1></h1>
+</body>
+</html>
